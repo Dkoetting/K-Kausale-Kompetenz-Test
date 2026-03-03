@@ -314,13 +314,94 @@ function ResultModule({ fieldAnswers }) {
           <div style={{ color: C.white, fontWeight: 700, marginBottom: 3 }}>30-Minuten Board-Briefing</div>
           <div style={{ color: C.gray, fontSize: 13 }}>Wenn 3 oder mehr Felder nicht vollständig adressiert sind.</div>
         </div>
-        <div style={{ color: C.teal, fontSize: 13, fontWeight: 700, marginLeft: 16, whiteSpace: "nowrap" }}>→ Termin anfragen</div>
+        <a href="https://calendly.com/drhomodigitus/300-sec-meeting" target="_blank" rel="noopener noreferrer"
+          style={{ color: C.teal, fontSize: 13, fontWeight: 700, marginLeft: 16, whiteSpace: "nowrap", textDecoration: "none" }}>
+          → Termin anfragen
+        </a>
+      </div>
+    </div>
+  );
+}
+
+function WelcomeScreen({ onStart }) {
+  const modules = [
+    { icon: "⏱", title: "K² Test", sub: "300-Sekunden-Check", desc: "Prüfen Sie, ob Sie die Kausalkette einer autonomen KI-Entscheidung in maximal 5 Minuten ad hoc nachweisen können. Der Timer läuft, sobald Sie starten. Regulatoren werden 2026 genau diese Frage stellen." },
+    { icon: "◉", title: "Canvas Assessment", sub: "6 Governance-Dimensionen", desc: "Bewerten Sie jede Dimension des Agentic Authority Canvas: Agency Radius, Delegate Authority, 300-Second Test, Causal Audit Trail, Risk & Liability Mapping, Governance Stack. Je Frage: Vollständig, Teilweise oder Lückenhaft." },
+    { icon: "▲", title: "Ergebnis", sub: "Haftungsrisiko-Analyse", desc: "Automatische Auswertung mit Gesamt-Score, Risikoklasse und priorisierten Handlungsfeldern. Inklusive Board-Fragen Checkliste und Empfehlung für nächste Schritte." },
+  ];
+  return (
+    <div style={{ minHeight: "100vh", background: C.bg, fontFamily: "'DM Sans','Segoe UI',sans-serif", color: C.white, display: "flex", flexDirection: "column" }}>
+      <div style={{ borderBottom: `1px solid ${C.border}`, padding: "16px 24px" }}>
+        <div style={{ display: "flex", alignItems: "baseline", gap: 7 }}>
+          <span style={{ fontSize: 18, fontWeight: 800 }}>Agentic Authority</span>
+          <span style={{ fontSize: 18, fontWeight: 800, color: C.teal }}>Canvas</span>
+        </div>
+        <div style={{ color: C.grayDark, fontSize: 10, marginTop: 2, letterSpacing: 1.5, textTransform: "uppercase" }}>
+          Governance für Agentic AI · Dr. Dirk Kötting · K&N EDVKonzepte
+        </div>
+      </div>
+      <div style={{ flex: 1, padding: "40px 24px", maxWidth: 820, margin: "0 auto", width: "100%", boxSizing: "border-box" }}>
+        <div style={{ textAlign: "center", marginBottom: 48 }}>
+          <div style={{ color: C.teal, fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 2, marginBottom: 14 }}>
+            Governance Assessment Tool
+          </div>
+          <div style={{ fontSize: 28, fontWeight: 800, marginBottom: 12, lineHeight: 1.2 }}>
+            Kein K² ohne Struktur.
+          </div>
+          <div style={{ color: C.gray, fontSize: 15, maxWidth: 560, margin: "0 auto", lineHeight: 1.8 }}>
+            K² steht für Kausale Kompetenz: die Fähigkeit, autonome KI-Entscheidungen end-to-end zu durchdringen. Wer das nicht nachweisen kann, haftet persönlich.
+          </div>
+        </div>
+
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 16, marginBottom: 40 }}>
+          {modules.map((m, i) => (
+            <div key={i} style={{ background: C.bgCard, border: `1px solid ${C.border}`, borderRadius: 14, padding: "22px 18px" }}>
+              <div style={{ fontSize: 28, marginBottom: 12 }}>{m.icon}</div>
+              <div style={{ color: C.white, fontWeight: 700, fontSize: 15, marginBottom: 3 }}>{m.title}</div>
+              <div style={{ color: C.teal, fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: 1, marginBottom: 10 }}>{m.sub}</div>
+              <div style={{ color: C.gray, fontSize: 13, lineHeight: 1.6 }}>{m.desc}</div>
+            </div>
+          ))}
+        </div>
+
+        <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, borderRadius: 14, padding: "20px 24px", marginBottom: 40 }}>
+          <div style={{ color: C.teal, fontWeight: 700, fontSize: 11, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 14 }}>So funktioniert das Assessment</div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 12 }}>
+            {[
+              { step: "01", text: "K² Test starten, Timer läuft, 5 Fragen zur Kausalkette beantworten" },
+              { step: "02", text: "Canvas Assessment: alle 6 Dimensionen einzeln bewerten" },
+              { step: "03", text: "Jede Frage ehrlich einschätzen: Vollständig, Teilweise oder Lückenhaft" },
+              { step: "04", text: "Ergebnis: Score, Risikoklasse und konkrete Handlungsfelder" },
+            ].map((s, i) => (
+              <div key={i} style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                <div style={{ color: C.teal, fontSize: 20, fontWeight: 800, fontFamily: "monospace" }}>{s.step}</div>
+                <div style={{ color: C.gray, fontSize: 13, lineHeight: 1.5 }}>{s.text}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div style={{ background: `${C.red}11`, border: `1px solid ${C.red}33`, borderRadius: 12, padding: "14px 20px", marginBottom: 36, display: "flex", alignItems: "center", gap: 14 }}>
+          <span style={{ color: C.red, fontSize: 18, flexShrink: 0 }}>⚠</span>
+          <div style={{ color: C.gray, fontSize: 13, lineHeight: 1.6 }}>
+            Dieses Tool ersetzt keine Rechtsberatung. Es dient der strukturierten Selbsteinschätzung im Beratungskontext. Ergebnisse sind intern zu behandeln.
+          </div>
+        </div>
+
+        <div style={{ textAlign: "center" }}>
+          <button onClick={onStart}
+            style={{ padding: "15px 48px", background: C.teal, border: "none", color: C.white, borderRadius: 12, cursor: "pointer", fontSize: 16, fontWeight: 700, letterSpacing: 0.5 }}>
+            Assessment starten →
+          </button>
+          <div style={{ color: C.grayDark, fontSize: 12, marginTop: 12 }}>ca. 10–15 Minuten · keine Daten werden gespeichert</div>
+        </div>
       </div>
     </div>
   );
 }
 
 export default function App() {
+  const [started, setStarted] = useState(false);
   const [tab, setTab] = useState("k2");
   const [openField, setOpenField] = useState(null);
   const [fieldAnswers, setFieldAnswers] = useState(FIELDS.map(f => Array(f.questions.length).fill(null)));
@@ -328,6 +409,9 @@ export default function App() {
   const answeredQ = fieldAnswers.reduce((a, fa) => a + fa.filter(Boolean).length, 0);
   const setAnswer = (fi, qi, val) =>
     setFieldAnswers(prev => prev.map((fa, i) => i === fi ? fa.map((v, j) => j === qi ? val : v) : fa));
+
+  if (!started) return <WelcomeScreen onStart={() => setStarted(true)} />;
+
   const TABS = [
     { id: "k2", label: "K² Test", icon: "⏱" },
     { id: "canvas", label: "Canvas Assessment", icon: "◉" },
