@@ -445,16 +445,33 @@ export default function App() {
           </button>
         ))}
       </div>
-      <div style={{ padding: "24px", maxWidth: "100%", margin: "0 auto" }}>
-        {tab === "k2" && (
-          <div>
-            <div style={{ marginBottom: 26 }}>
-              <div style={{ color: C.teal, fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 6 }}>300-Sekunden-Check</div>
-              <div style={{ color: C.white, fontSize: 20, fontWeight: 700, marginBottom: 6 }}>K² – Kausale Kompetenz Test</div>
-              <div style={{ color: C.gray, fontSize: 14, lineHeight: 1.7, maxWidth: 520 }}>Können Sie die Kausalkette einer autonomen KI-Entscheidung in maximal 5 Minuten ad hoc nachweisen? Regulatoren und Versicherer werden 2026 genau diese Frage stellen.</div>
-            </div>
-            <K2Module onDone={() => setTab("canvas")} />
-          </div>
+     <div
+  style={{
+    padding: "24px 48px",
+    maxWidth: "1200px",
+    margin: "0 auto",
+    boxSizing: "border-box",
+  }}
+>
+  {tab === "k2" && (
+    <div>
+      <div style={{ marginBottom: 26, maxWidth: 800, margin: "0 auto" }}>
+        <div style={{ color: C.teal, fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 6 }}>
+          300-Sekunden-Check
+        </div>
+        <div style={{ color: C.white, fontSize: 20, fontWeight: 700, marginBottom: 6 }}>
+          K² – Kausale Kompetenz Test
+        </div>
+        <div style={{ color: C.gray, fontSize: 14, lineHeight: 1.7, maxWidth: 520, margin: "0 auto" }}>
+          Können Sie die Kausalkette einer autonomen KI-Entscheidung in maximal 5 Minuten ad hoc nachweisen? Regulatoren und Versicherer werden 2026 genau diese Frage stellen.
+        </div>
+      </div>
+      <K2Module onDone={() => setTab("canvas")} />
+    </div>
+  )}
+  {/* canvas / result ... */}
+</div>
+
         )}
         {tab === "canvas" && (
           <div>
