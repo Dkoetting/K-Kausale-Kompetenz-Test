@@ -314,7 +314,7 @@ function ResultModule({ fieldAnswers }) {
           <div style={{ color: C.white, fontWeight: 700, marginBottom: 3 }}>30-Minuten Board-Briefing</div>
           <div style={{ color: C.gray, fontSize: 13 }}>Wenn 3 oder mehr Felder nicht vollständig adressiert sind.</div>
         </div>
-        <a href="https://calendly.com/drhomodigitus/300-sec-meeting" target="_blank" rel="noopener noreferrer"
+        <a href="https://dkoetting.github.io/terminbuchung/" target="_blank" rel="noopener noreferrer"
           style={{ color: C.teal, fontSize: 13, fontWeight: 700, marginLeft: 16, whiteSpace: "nowrap", textDecoration: "none" }}>
           → Termin anfragen
         </a>
