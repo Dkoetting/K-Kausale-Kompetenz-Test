@@ -445,7 +445,7 @@ export default function App() {
           </button>
         ))}
       </div>
-      <div style={{ padding: "24px", maxWidth: 820, margin: "0 auto" }}>
+      <div style={{ padding: "24px", maxWidth: "100%", margin: "0 auto" }}>
         {tab === "k2" && (
           <div>
             <div style={{ marginBottom: 26 }}>
