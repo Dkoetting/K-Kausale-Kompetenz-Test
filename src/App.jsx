@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const C = {
   bg: "#0A1628", bgCard: "#0F1E35", teal: "#00B4D8",
@@ -325,19 +325,19 @@ function ResultModule({ fieldAnswers }) {
 
 function WelcomeScreen({ onStart }) {
   const modules = [
-    { icon: "⏱", title: "K² Test", sub: "300-Sekunden-Check", desc: "Prüfen Sie, ob Sie die Kausalkette einer autonomen KI-Entscheidung in maximal 5 Minuten ad hoc nachweisen können. Der Timer läuft, sobald Sie starten. Regulatoren werden 2026 genau diese Frage stellen." },
-    { icon: "◉", title: "Canvas Assessment", sub: "6 Governance-Dimensionen", desc: "Bewerten Sie jede Dimension des Agentic Authority Canvas: Agency Radius, Delegate Authority, 300-Second Test, Causal Audit Trail, Risk & Liability Mapping, Governance Stack. Je Frage: Vollständig, Teilweise oder Lückenhaft." },
-    { icon: "▲", title: "Ergebnis", sub: "Haftungsrisiko-Analyse", desc: "Automatische Auswertung mit Gesamt-Score, Risikoklasse und priorisierten Handlungsfeldern. Inklusive Board-Fragen Checkliste und Empfehlung für nächste Schritte." },
+    { icon: "⏱", title: "K² Test", sub: "300-Sekunden-Check", desc: "Prüfen Sie, ob Sie die Kausalkette einer autonomen KI-Entscheidung in maximal 5 Minuten ad hoc nachweisen können. Regulatoren werden 2026 genau diese Frage stellen." },
+    { icon: "◉", title: "Canvas Assessment", sub: "6 Governance-Dimensionen", desc: "Bewerten Sie jede Dimension des Agentic Authority Canvas: Agency Radius, Delegate Authority, 300-Second Test, Causal Audit Trail, Risk & Liability Mapping, Governance Stack." },
+    { icon: "▲", title: "Ergebnis", sub: "Haftungsrisiko-Analyse", desc: "Automatische Auswertung mit Gesamt-Score, Risikoklasse und priorisierten Handlungsfeldern. Inklusive Board-Fragen Checkliste." },
   ];
   return (
     <div style={{ minHeight: "100vh", background: C.bg, fontFamily: "'DM Sans','Segoe UI',sans-serif", color: C.white, display: "flex", flexDirection: "column" }}>
-      <div style={{ borderBottom: `"1200px" solid ${C.border}`, padding: "32px 48px" }}>
+      <div style={{ borderBottom: `1px solid ${C.border}`, padding: "32px 48px" }}>
         <div style={{ display: "flex", alignItems: "baseline", gap: 7 }}>
           <span style={{ fontSize: 18, fontWeight: 800 }}>Agentic Authority</span>
           <span style={{ fontSize: 18, fontWeight: 800, color: C.teal }}>Canvas</span>
         </div>
         <div style={{ color: C.grayDark, fontSize: 10, marginTop: 2, letterSpacing: 1.5, textTransform: "uppercase" }}>
-          Governance für Agentic AI · Dr. Dirk Kötting · Dr.DirKInstitut
+          Governance für Agentic AI · Dr. Dirk Kötting · Dr. DirKInstitute
         </div>
       </div>
       <div style={{ flex: 1, padding: "40px 48px", maxWidth: "1200px", margin: "0 auto", width: "100%", boxSizing: "border-box" }}>
@@ -405,8 +405,10 @@ export default function App() {
   const [tab, setTab] = useState("k2");
   const [openField, setOpenField] = useState(null);
   const [fieldAnswers, setFieldAnswers] = useState(FIELDS.map(f => Array(f.questions.length).fill(null)));
+  
   const totalQ = FIELDS.reduce((a, f) => a + f.questions.length, 0);
   const answeredQ = fieldAnswers.reduce((a, fa) => a + fa.filter(Boolean).length, 0);
+
   const setAnswer = (fi, qi, val) =>
     setFieldAnswers(prev => prev.map((fa, i) => i === fi ? fa.map((v, j) => j === qi ? val : v) : fa));
 
@@ -417,6 +419,7 @@ export default function App() {
     { id: "canvas", label: "Canvas Assessment", icon: "◉" },
     { id: "result", label: "Ergebnis", icon: "▲" },
   ];
+
   return (
     <div style={{ minHeight: "100vh", background: C.bg, fontFamily: "'DM Sans','Segoe UI',sans-serif", color: C.white }}>
       <div style={{ borderBottom: `1px solid ${C.border}`, padding: "16px 24px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
@@ -438,41 +441,34 @@ export default function App() {
           </div>
         )}
       </div>
+
       <div style={{ display: "flex", borderBottom: `1px solid ${C.border}`, padding: "0 24px" }}>
         {TABS.map(t => (
-          <button key={t.id} onClick={() => setTab(t.id)} style={{ padding: "12px 16px", background: "transparent", border: "none", borderBottom: `2px solid ${tab === t.id ? C.teal : "transparent"}`, color: tab === t.id ? C.white : C.grayDark, cursor: "pointer", fontSize: 13, fontWeight: tab === t.id ? 600 : 400, display: "flex", alignItems: "center", gap: 6, transition: "all 0.15s" }}>
+          <button key={t.id} onClick={() => setTab(t.id)} 
+            style={{ padding: "12px 16px", background: "transparent", border: "none", borderBottom: `2px solid ${tab === t.id ? C.teal : "transparent"}`, color: tab === t.id ? C.white : C.grayDark, cursor: "pointer", fontSize: 13, fontWeight: tab === t.id ? 600 : 400, display: "flex", alignItems: "center", gap: 6, transition: "all 0.15s" }}>
             {t.icon} {t.label}
           </button>
         ))}
       </div>
-     <div
-  style={{
-    padding: "24px 48px",
-    maxWidth: "1200px",
-    margin: "0 auto",
-    boxSizing: "border-box",
-  }}
->
-  {tab === "k2" && (
-    <div>
-      <div style={{ marginBottom: 26, maxWidth: 800, margin: "0 auto" }}>
-        <div style={{ color: C.teal, fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 6 }}>
-          300-Sekunden-Check
-        </div>
-        <div style={{ color: C.white, fontSize: 20, fontWeight: 700, marginBottom: 6 }}>
-          K² – Kausale Kompetenz Test
-        </div>
-        <div style={{ color: C.gray, fontSize: 14, lineHeight: 1.7, maxWidth: 520, margin: "0 auto" }}>
-          Können Sie die Kausalkette einer autonomen KI-Entscheidung in maximal 5 Minuten ad hoc nachweisen? Regulatoren und Versicherer werden 2026 genau diese Frage stellen.
-        </div>
-      </div>
-      <K2Module onDone={() => setTab("canvas")} />
-    </div>
-  )}
-  {/* canvas / result ... */}
-</div>
 
+      <div style={{ padding: "24px 48px", maxWidth: "1200px", margin: "0 auto", boxSizing: "border-box" }}>
+        {tab === "k2" && (
+          <div>
+            <div style={{ marginBottom: 26, maxWidth: 800, margin: "0 auto", textAlign: "center" }}>
+              <div style={{ color: C.teal, fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 6 }}>
+                300-Sekunden-Check
+              </div>
+              <div style={{ color: C.white, fontSize: 20, fontWeight: 700, marginBottom: 6 }}>
+                K² – Kausale Kompetenz Test
+              </div>
+              <div style={{ color: C.gray, fontSize: 14, lineHeight: 1.7, maxWidth: 520, margin: "0 auto" }}>
+                Können Sie die Kausalkette einer autonomen KI-Entscheidung in maximal 5 Minuten ad hoc nachweisen? Regulatoren werden 2026 genau diese Frage stellen.
+              </div>
+            </div>
+            <K2Module onDone={() => setTab("canvas")} />
+          </div>
         )}
+
         {tab === "canvas" && (
           <div>
             <div style={{ marginBottom: 22 }}>
@@ -496,6 +492,7 @@ export default function App() {
             )}
           </div>
         )}
+
         {tab === "result" && (
           <div>
             <div style={{ marginBottom: 22 }}>
