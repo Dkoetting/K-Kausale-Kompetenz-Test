@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-F
+
 const C = {
   bg: "#0A1628", bgCard: "#0F1E35", teal: "#00B4D8",
   red: "#E63946", green: "#2ECC71", orange: "#F39C12",
