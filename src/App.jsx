@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-
+F
 const C = {
   bg: "#0A1628", bgCard: "#0F1E35", teal: "#00B4D8",
   red: "#E63946", green: "#2ECC71", orange: "#F39C12",
@@ -426,7 +426,7 @@ export default function App() {
             <span style={{ fontSize: 18, fontWeight: 800, color: C.teal }}>Canvas</span>
           </div>
           <div style={{ color: C.grayDark, fontSize: 10, marginTop: 2, letterSpacing: 1.5, textTransform: "uppercase" }}>
-            Governance für Agentic AI · Dr. Dirk Kötting · K&N EDVKonzepte
+            Governance für Agentic AI · Dr. Dirk Kötting · Dr. DirKInstitute
           </div>
         </div>
         {tab === "canvas" && (
