@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-
+jsx<div style={{ marginBottom: 40, maxWidth: 960, margin: "0 auto"
 const C = {
   bg: "#0A1628", bgCard: "#0F1E35", teal: "#00B4D8",
   red: "#E63946", green: "#2ECC71", orange: "#F39C12",
@@ -151,7 +151,16 @@ function K2Module({ onDone }) {
   }
 
   return (
-    <div style={{ maxWidth: 820, margin: "0 auto" }}>
+    // War wahrscheinlich:
+<div style={{ maxWidth: 820, margin: "0 auto" }}>
+
+// Neu vorschlagen:
+<div style={{
+  width: "100%",
+  maxWidth: "min(1400px, 94vw)",     // oder sogar "min(1600px, 96vw)" testen
+  margin: "0 auto",
+  padding: "0 12px"                  // optional etwas Innenabstand
+}}>
       {!timerActive ? (
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <div style={{ color: C.grayDark, fontSize: 13, marginBottom: 16 }}>Timer startet wenn Sie auf "Test starten" klicken. Die Uhr läuft während Sie die Fragen beantworten.</div>
