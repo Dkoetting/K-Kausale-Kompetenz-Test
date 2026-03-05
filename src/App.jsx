@@ -473,7 +473,7 @@ export default function App() {
       </div>
 
       <div style={{
-  padding: "32px clamp(24px, 5vw, 120px)",   // links/rechts: mind. 24 px, ideal 5vw, max 120 px
+  padding: "32px clamp(32px, 6vw, 160px)",   // links/rechts: mind. 24 px, ideal 5vw, max 120 px
   width: "100%",
   maxWidth: "none",                          // ← das Wichtigste: kein Limit mehr
   margin: "0 auto",
