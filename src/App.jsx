@@ -331,7 +331,7 @@ function WelcomeScreen({ onStart }) {
   ];
   return (
     <div style={{ minHeight: "100vh", background: C.bg, fontFamily: "'DM Sans','Segoe UI',sans-serif", color: C.white, display: "flex", flexDirection: "column" }}>
-      <div style={{ borderBottom: `1px solid ${C.border}`, padding: "32px 48px" }}>
+      <div style={{ borderBottom: `1200px solid ${C.border}`, padding: "32px 48px" }}>
         <div style={{ display: "flex", alignItems: "baseline", gap: 7 }}>
           <span style={{ fontSize: 18, fontWeight: 800 }}>Agentic Authority</span>
           <span style={{ fontSize: 18, fontWeight: 800, color: C.teal }}>Canvas</span>
