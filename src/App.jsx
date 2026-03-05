@@ -126,7 +126,7 @@ function K2Module({ onDone }) {
     setResult(null); setStep(0); setVals(Array(5).fill(""));
     setSeconds(300); setTimerActive(false);
   };
-
+  
   if (result) {
     const r = RES[result.level];
     const elapsed = result.elapsed;
@@ -331,7 +331,7 @@ function WelcomeScreen({ onStart }) {
   ];
   return (
     <div style={{ minHeight: "100vh", background: C.bg, fontFamily: "'DM Sans','Segoe UI',sans-serif", color: C.white, display: "flex", flexDirection: "column" }}>
-      <div style={{ borderBottom: `1200px solid ${C.border}`, padding: "32px 48px" }}>
+      <div style={{ borderBottom: `"1200px" solid ${C.border}`, padding: "32px 48px" }}>
         <div style={{ display: "flex", alignItems: "baseline", gap: 7 }}>
           <span style={{ fontSize: 18, fontWeight: 800 }}>Agentic Authority</span>
           <span style={{ fontSize: 18, fontWeight: 800, color: C.teal }}>Canvas</span>
@@ -340,7 +340,7 @@ function WelcomeScreen({ onStart }) {
           Governance für Agentic AI · Dr. Dirk Kötting · Dr.DirKInstitut
         </div>
       </div>
-      <div style={{ flex: 1, padding: "40px 48px", maxWidth: 1200px, margin: "0 auto", width: "100%", boxSizing: "border-box" }}>
+      <div style={{ flex: 1, padding: "40px 48px", maxWidth: "1200px", margin: "0 auto", width: "100%", boxSizing: "border-box" }}>
         <div style={{ textAlign: "center", marginBottom: 48 }}>
           <div style={{ color: C.teal, fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 2, marginBottom: 14 }}>
             Governance Assessment Tool
