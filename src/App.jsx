@@ -481,7 +481,7 @@ export default function App() {
 }}>        
         {tab === "k2" && (
           <div>
-            <div style={{ marginBottom: 40, maxWidth: 960, margin: "0 auto", textAlign: "center" }}>
+            <div style={{ marginBottom: 48, maxWidth: "min(1200px, 90vw), margin: "0 auto", textAlign: "center" }}>
               <div style={{ color: C.teal, fontSize: 12, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 8 }}>
                 300-Sekunden-Check
               </div>
