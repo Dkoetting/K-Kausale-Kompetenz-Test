@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-jsx<div style={{ marginBottom: 40, maxWidth: 960, margin: "0 auto"
+
 const C = {
   bg: "#0A1628", bgCard: "#0F1E35", teal: "#00B4D8",
   red: "#E63946", green: "#2ECC71", orange: "#F39C12",
@@ -151,10 +151,8 @@ function K2Module({ onDone }) {
   }
 
   return (
-    // War wahrscheinlich:
-<div style={{ maxWidth: 820, margin: "0 auto" }}>
+   <div style={{ maxWidth: 820, margin: "0 auto" }}>
 
-// Neu vorschlagen:
 <div style={{
   width: "100%",
   maxWidth: "min(1400px, 94vw)",     // oder sogar "min(1600px, 96vw)" testen
