@@ -151,13 +151,12 @@ function K2Module({ onDone }) {
   }
 
   return (
-   <div style={{ maxWidth: 820, margin: "0 auto" }}>
-
+  
 <div style={{
   width: "100%",
-  maxWidth: "min(1400px, 94vw)",     // oder sogar "min(1600px, 96vw)" testen
+  maxWidth: "min(1400px, 94vw)",      
   margin: "0 auto",
-  padding: "0 12px"                  // optional etwas Innenabstand
+  padding: "0 12px"                   
 }}>
       {!timerActive ? (
         <div style={{ textAlign: "center", marginBottom: 32 }}>
