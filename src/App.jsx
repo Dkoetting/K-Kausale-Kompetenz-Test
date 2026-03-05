@@ -469,14 +469,38 @@ export default function App() {
         )}
       </div>
 
-      <div style={{ display: "flex", borderBottom: `1px solid ${C.border}`, padding: "0 5vw" }}>
-        {TABS.map(t => (
-          <button key={t.id} onClick={() => setTab(t.id)}
-            style={{ padding: "14px 20px", background: "transparent", border: "none", borderBottom: `3px solid ${tab === t.id ? C.teal : "transparent"}`, color: tab === t.id ? C.white : C.grayDark, cursor: "pointer", fontSize: 14, fontWeight: tab === t.id ? 600 : 400, display: "flex", alignItems: "center", gap: 8, transition: "all 0.15s" }}>
-            {t.icon} {t.label}
-          </button>
-        ))}
-      </div>
+    <div style={{
+  display: "flex",
+  borderBottom: `1px solid ${C.border}`,
+  padding: "0 clamp(16px, 5vw, 120px)",   // ← mehr Spielraum links/rechts (min 16px, ideal 5vw, max 120px)
+  background: C.bg,                        // optional: gleiche Farbe wie Hintergrund
+  overflowX: "auto",                       // ← falls zu viele Tabs → scrollbar
+}}>
+  {TABS.map(t => (
+    <button
+      key={t.id}
+      onClick={() => setTab(t.id)}
+      style={{
+        padding: "14px 24px",                // etwas mehr horizontaler Platz pro Tab
+        background: "transparent",
+        border: "none",
+        borderBottom: `3px solid ${tab === t.id ? C.teal : "transparent"}`,
+        color: tab === t.id ? C.white : C.grayDark,
+        cursor: "pointer",
+        fontSize: 14,
+        fontWeight: tab === t.id ? 600 : 400,
+        display: "flex",
+        alignItems: "center",
+        gap: 10,
+        transition: "all 0.2s ease",
+        whiteSpace: "nowrap",                // verhindert Zeilenumbruch bei langen Labels
+        flexShrink: 0,                       // Tabs nicht quetschen
+      }}
+    >
+      {t.icon} {t.label}
+    </button>
+  ))}
+</div>
 
       <div style={{
   padding: "32px clamp(32px, 6vw, 160px)",   // links/rechts: mind. 24 px, ideal 5vw, max 120 px
