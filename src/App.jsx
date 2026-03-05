@@ -473,11 +473,12 @@ export default function App() {
       </div>
 
       <div style={{
-        padding: "32px 5vw",
-        maxWidth: "1480px",
-        margin: "0 auto",
-        boxSizing: "border-box"
-      }}>
+  padding: "32px clamp(24px, 5vw, 120px)",   // links/rechts: mind. 24 px, ideal 5vw, max 120 px
+  width: "100%",
+  maxWidth: "none",                          // ← das Wichtigste: kein Limit mehr
+  margin: "0 auto",
+  boxSizing: "border-box"
+}}>        
         {tab === "k2" && (
           <div>
             <div style={{ marginBottom: 40, maxWidth: 960, margin: "0 auto", textAlign: "center" }}>
